@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegistrationServlet
  */
-@WebServlet("/Registration") //match the action of jsp file
+@WebServlet("/registration") //match the action of jsp file
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -93,6 +93,12 @@ public class Registration extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher view = request.getRequestDispatcher("registration.jsp");
+        view.forward(request, response);
 	}
 
 }

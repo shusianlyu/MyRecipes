@@ -12,6 +12,13 @@
 
 <!-- Main css (to be edit!)-->
 <link rel="stylesheet" href="css/style.css">
+<style>
+img {
+  margin-top: 90px;
+  max-width: 100%;
+  height: auto;
+}
+</style>
 </head>
 <body>
 <input type="hidden" id="status" value="<%=request.getAttribute("status")%>">
@@ -70,7 +77,7 @@
 					</div>
 					<div class="signup-image">
 						<figure>
-							<img src="images/sign-up-image.png" alt="sing up image">
+							<img src="images/signup.jpg" alt="sing up image">
 						</figure>
 						<a href="login.jsp" class="signup-image-link">Already had an account?</a>
 					</div>
@@ -96,12 +103,12 @@
 	<script src="js/main.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="alert/dist/sweetalert.css">
-<script type="text/javascript">
+	<script type="text/javascript">
 	var status = document.getElementById("status").value;
 	if(status == "success"){
 		swal("Congrats", "Account Created Successfully", "success");
 	}
-</script>
+	</script>
 
 </body>
 </html>
