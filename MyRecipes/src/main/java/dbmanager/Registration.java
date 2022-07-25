@@ -1,7 +1,9 @@
 package dbmanager;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +19,40 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Registration") //match the action of jsp file
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
+	// encrypt Password 
+	public static String encryptPassword(String input) { 
+		try {
+			// getInstance() method is called with algorithm SHA-512 
+			MessageDigest md = MessageDigest.getInstance("SHA-512"); 
+	  
+	            // digest() method is called 
+	            // to calculate message digest of the input string 
+	            // returned as array of byte 
+			byte[] messageDigest = md.digest(input.getBytes()); 
+	  
+	            // Convert byte array into signum representation 
+			BigInteger no = new BigInteger(1, messageDigest); 
+	  
+	            // Convert message digest into hex value 
+			String hashtext = no.toString(16); 
+	  
+	            // Add preceding 0s to make it 32 bit 
+			while (hashtext.length() < 32) { 
+				hashtext = "0" + hashtext; 
+			} 
+	  
+	            // return the HashText 
+			return hashtext; 
+		} 
+	  
+	        // For specifying wrong message digest algorithms
+		catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e); 
+		} 
+} 
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -25,7 +60,7 @@ public class Registration extends HttpServlet {
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
 		String email = request.getParameter("email");
-		String pwd = request.getParameter("pass");
+		String encryptPwd = encryptPassword(request.getParameter("pass"));
 		
 		RequestDispatcher dispatcher = null;
 		
@@ -39,7 +74,7 @@ public class Registration extends HttpServlet {
 			pst.setString(2, first_name);
 			pst.setString(3, last_name);
 			pst.setString(4, email);
-			pst.setString(5, pwd);
+			pst.setString(5, encryptPwd);
 			
 			
 			int rowCount = pst.executeUpdate();
