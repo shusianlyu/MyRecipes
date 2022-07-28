@@ -1,6 +1,6 @@
 <%
 if(session.getAttribute("name")==null){
-	response.sendRedirect("donate_recipes.jsp");
+	response.sendRedirect("login.jsp");
 }
 %>
 <!DOCTYPE html>
@@ -9,20 +9,19 @@ if(session.getAttribute("name")==null){
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
 <title>MyRecipes</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<!-- Font Awesome icons (free version)-->
+<!-- Font Awesome icons-->
 <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
 	crossorigin="anonymous"></script>
+<!-- Google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
 	rel="stylesheet" type="text/css" />
-<!-- Core theme CSS (includes Bootstrap)-->
+<!-- Core theme CSS -->
 <link href="css/index-styles.css" rel="stylesheet" />
 <link href="css/search-form.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -215,7 +214,7 @@ if(session.getAttribute("name")==null){
 				</div>
 				<div class="col-lg-4 me-auto">
 					<p class="lead">MyRecipes will do the planning stage for you by finding 
-					the best meal, which will be the perfect match for everyone’s preference, 
+					the best meal, which will be the perfect match for everyone's preference, 
 					different serving size,and limited ingredients. All you have to do is to 
 					cook the meal and be ready to be served. This application will be accessible 
 					through a home computer via browser.</p>
@@ -303,7 +302,7 @@ if(session.getAttribute("name")==null){
 				<div class="col-lg-4 mb-5 mb-lg-0">
 					<h4 class="text-uppercase mb-4">Location</h4>
 					<p class="lead mb-0">
-						1 Washington Square <br />SanJose, CA 95192
+						1 Washington Square <br />San Jose, CA 95192
 					</p>
 				</div>
 				<!-- Footer Social Icons-->
