@@ -116,7 +116,7 @@
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-						<img class="img-fluid" src="assets/img/menu/search.png"
+						<img class="img-fluid" src="assets/img/menu/book.jpg"
 							alt="..." />
 					</div>
 				</div>
@@ -373,7 +373,7 @@
 							<div class="col-lg-8">
 								<!-- Menu Modal - Title-->
 								<h2
-									class="menu-modal-title text-secondary text-uppercase mb-0">Searching Recipe</h2>
+									class="menu-modal-title text-secondary text-uppercase mb-0">Recipe Book</h2>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -428,7 +428,8 @@
 								<img class="img-fluid rounded mb-5"
 									src="assets/img/menu/favorite.png" alt="..." />
 								<!-- Menu Modal - Text-->
-								<p class="mb-4">.</p>
+								<p class="mb-4">All your favor recipe are here! 
+								Save your time and save your favorite.</p>
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
 									<i class="fas fa-times fa-fw"></i> Add Favor Recipe
@@ -468,10 +469,11 @@
 								<img class="img-fluid rounded mb-5"
 									src="assets/img/menu/friends.png" alt="..." />
 								<!-- Menu Modal - Text-->
-								<p class="mb-4">.</p>
+								<p class="mb-4">You can find your friend to share your recipe, or see what they sharing in here.
+								You can find your friend by their name or by their recipe.</p>
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
-									<i class="fas fa-times fa-fw"></i> Friendds list
+									<i class="fas fa-times fa-fw"></i> Friends list
 								</button>
 							</div>
 						</div>
@@ -508,7 +510,8 @@
 								<img class="img-fluid rounded mb-5"
 									src="assets/img/menu/shopping.png" alt="..." />
 								<!-- Menu Modal - Text-->
-								<p class="mb-4">.</p>
+								<p class="mb-4">You can save items to shop for recipe here.
+								Users can also give some notes about the brand of the item or the location where to buy it.</p>
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
 									<i class="fas fa-times fa-fw"></i> Open Shopping List
@@ -548,7 +551,8 @@
 								<img class="img-fluid rounded mb-5"
 									src="assets/img/menu/profile.png" alt="..." />
 								<!-- Menu Modal - Text-->
-								<p class="mb-4">.</p>
+								<p class="mb-4">You can change your picture, password, and email here. Users can also 
+								see all recipe they posted, and manage it on their profile.</p>
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
 									<i class="fas fa-times fa-fw"></i> Open Profile
