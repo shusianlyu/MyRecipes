@@ -37,8 +37,16 @@ img {
 									type="text" name="title" id="title" placeholder="Recipe title" required maxlength="45"/>
 							</div>
 							<div class="form-group">
+								<p><label for="ingredients">Ingredients:</label></p>
+								<textarea id="ingredients" name="ingredients" rows="2" cols="50"></textarea>
+							</div>
+							<div class="form-group">
 								<p><label for="description">Description:</label></p>
 								<textarea id="description" name="description" rows="4" cols="50"></textarea>
+							</div>
+							<div class="form-group">
+								<p><label for="method">Method:</label></p>
+								<textarea id="method" name="method" rows="3" cols="50"></textarea>
 							</div>
 							<div class="form-group">
 								<p><label for="type">Type:</label></p><input

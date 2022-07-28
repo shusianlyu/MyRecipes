@@ -1,3 +1,8 @@
+<%
+if(session.getAttribute("name")==null){
+	response.sendRedirect("donate_recipes.jsp");
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
