@@ -1,34 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Welcome to Recipe Book!</title>
+<title>Recipe Book</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 </head>
 <body>
 
-<div class="form-group">
-<p><label for="friedchicken">Air Fryer Keto Chicken</label></p>
-<p>
-30 minutes
->6 Chicken drumsticks
->1/4 cup Coconut Flour
->1/2 tsp Sea salt
->1/4 tsp Black pepper
->2 large Eggs
->1 cup Pork rinds
->1 tsp Smoked paprika
->1/2 tsp Garlic powder
->1/4 tsp Dried thyme
-done
->Stir the coconut flour, sea salt and black pepper in a medium shallow bowl. Set aside.
->In a second medium bowl, whisk together the eggs. Set aside.
->In a third bowl, mix the crushed pork rinds, smoked paprika, garlic powder and thyme.
->Dredge the chicken pieces in the coconut flour mixture, dip in the eggs, shake off the excess, then press into the pork rind mixture. For best results, keep most of the third mixture in a separate bowl and add a little at a time to the bowl where you'll be coating the chicken. That way, it won't get clumpy too fast.
->Preheat the air fryer at 400 degrees F (204 degrees C) for 5 minutes. Lightly grease the metal basket and arrange the breaded chicken on it in a single layer, without touching.
->Place the basket into the air fryer. Cook the fried chicken in the air fryer for 20 minutes, until it reaches an internal temperature of 165 degrees F (74 degrees C).</p>
-</div>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: green">
+			<div>
+				<a href="https://www.xadmin.net" class="navbar-brand"> Recipe Book </a>
+			</div>
 
+			<ul class="navbar-nav">
+				<li><a href="<%=request.getContextPath()%>/list"
+					class="nav-link">Recipe</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+
+	<div class="row">
+		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
+
+		<div class="container">
+			<h3 class="text-center">List of Recipe</h3>
+			<hr>
+			<div class="container text-left">
+
+				<a href="<%=request.getContextPath()%>/donate_recipe" class="btn btn-success">Add
+					New Recipe</a>
+			</div>
+			<br>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Ingredients</th>
+						<th>Description</th>
+						<th>Method</th>
+						<th>Type</th>
+						<th>Serving Size</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					<c:forEach var="recipe" items="${listRecipe}">
+
+						<tr>
+							<td><c:out value="${recipe.id}" /></td>
+							<td><c:out value="${recipe.name}" /></td>
+							<td><c:out value="${recipe.ingredients}" /></td>
+							<td><c:out value="${recipe.description}" /></td>
+							<td><c:out value="${recipe.method}" /></td>
+							<td><c:out value="${recipe.type}" /></td>
+							<td><c:out value="${recipe.serveSize}" /></td>
+							<td><a href="edit?id=<c:out value='${recipe.id}' />">Edit</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="delete?id=<c:out value='${recipe.id}' />">Delete</a></td>
+						</tr>
+					</c:forEach>
+		
+				</tbody>
+
+			</table>
+		</div>
+	</div>
 </body>
 </html>
