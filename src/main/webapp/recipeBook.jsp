@@ -33,7 +33,7 @@
 			<hr>
 			<div class="container text-left">
 
-				<a href="<%=request.getContextPath()%>/donate_recipe" class="btn btn-success">Add
+				<a href="<%=request.getContextPath()%>/donate_recipes.jsp" class="btn btn-success">Add
 					New Recipe</a>
 			</div>
 			<br>
