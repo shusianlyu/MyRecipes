@@ -20,6 +20,10 @@
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
 					class="nav-link">Recipe</a></li>
+				<li><a href="<%=request.getContextPath()%>/login.jsp"
+					class="nav-link">Sign in</a></li>
+				<li><a href="<%=request.getContextPath()%>/registration.jsp"
+					class="nav-link">Sign up</a></li>
 			</ul>
 		</nav>
 	</header>
