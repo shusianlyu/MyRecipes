@@ -31,7 +31,7 @@ img {
 					<div class="signup-form">
 						<h2 class="form-title">Sign up</h2>
 					
-						<form method="post" action="Registration" class="register-form"
+						<form method="post" action="registration" class="register-form"
 							id="register-form">
 							<div class="form-group">
 								<label for="username"><i
