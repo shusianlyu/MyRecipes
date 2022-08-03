@@ -69,7 +69,43 @@ public class Registration extends HttpServlet {
 		
 		try {
 			Connection con = jdbcmysql.initializeDatabase();
-			PreparedStatement pst = con.prepareStatement("insert into Users (username, first_name, last_name, email, password) values (?,?,?,?,?)");
+			
+			PreparedStatement pst1 = con.prepareStatement("select * from users where username=?");
+			pst1.setString(1, username);
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			ResultSet rs1 = pst1.executeQuery();
+			if (rs1.next()) {
+				request.setAttribute("status", "failed");
+			}
+			else {
+				PreparedStatement pst = con.prepareStatement("insert into users (username, first_name, last_name, email, password) values (?,?,?,?,?)");
+				pst.setString(1, username);
+				pst.setString(2, first_name);
+				pst.setString(3, last_name);
+				pst.setString(4, email);
+				pst.setString(5, encryptPwd);
+			
+			
+			
+				int rowCount = pst.executeUpdate();
+				
+				//dispatcher = request.getRequestDispatcher("registration.jsp");
+				if(rowCount > 0) {
+					request.setAttribute("status", "success");
+				} else {
+					request.setAttribute("status", "failed");
+				}
+				pst.close();
+			}
+			
+			dispatcher.forward(request,response);
+			
+			//pst.close();
+			pst1.close();
+			con.close();
+			
+			
+			/*PreparedStatement pst = con.prepareStatement("insert into Users (username, first_name, last_name, email, password) values (?,?,?,?,?)");
 			pst.setString(1, username);
 			pst.setString(2, first_name);
 			pst.setString(3, last_name);
@@ -88,7 +124,7 @@ public class Registration extends HttpServlet {
 			dispatcher.forward(request,response);
 			
 			pst.close();
-			con.close();
+			con.close();*/
 		}
 		catch(Exception e) {
 			e.printStackTrace();
