@@ -108,6 +108,9 @@ img {
 	if(status == "success"){
 		swal("Congrats", "Account Created Successfully", "success");
 	}
+	else if (status == "failed") {
+		swal("Sorry", "Username In Use, Try Again", "error");
+	}
 	</script>
 
 </body>
