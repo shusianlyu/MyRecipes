@@ -13,7 +13,7 @@ Division of Work:
   Ngan Nguyen:
     ...
   Koosha Kimelman
-    ...
+    Recipe searching, bugfixing, presentation
 
 
 
