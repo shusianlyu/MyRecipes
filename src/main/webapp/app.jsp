@@ -1,8 +1,3 @@
-<%
-if(session.getAttribute("name")==null){
-	response.sendRedirect("recipeBook.jsp");
-}
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -351,10 +346,8 @@ if(session.getAttribute("name")==null){
 								 introduction, individual ingredients, procedures and special notes be entered 
 								 separately. You can make it public to share with everyone or keep it for your own 
 								 record.</p>
-								<button class="btn btn-primary" href="#!"
-									data-bs-dismiss="modal">
-									<i class="fas fa-times fa-fw"></i> Start Adding
-								</button>
+								<li><a href="<%=request.getContextPath()%>/donate_recipes.jsp"
+					                       class="nav-link">Start add</a></li>
 							</div>
 						</div>
 					</div>
@@ -393,10 +386,8 @@ if(session.getAttribute("name")==null){
 								<p class="mb-4">Find your favorite recipe today! You can search a recipe by their 
 								ingredient, title, category, or method. By ingredient which you already have, you 
 								can find the suitable recipe for it.</p>
-								<button class="btn btn-primary" href="#!"
-									data-bs-dismiss="modal">
-									<i class="fas fa-times fa-fw"></i> Start Finding
-								</button>
+								<li><a href="<%=request.getContextPath()%>/recipeBook.jsp"
+					                    class="nav-link">Look for recipe</a></li>
 							</div>
 						</div>
 					</div>
