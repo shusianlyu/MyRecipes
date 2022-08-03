@@ -29,7 +29,10 @@ Division of Work:
   + recipeBook.jsp - recipe will show here after added.
   
   Koosha Kimelman
-    Recipe searching, bugfixing, presentation
+  + recipe_search.jsp - form for searching recipes in the database
+  + Recipe_Search.java - queries database and returns results
+  + bugfixing - various files
+  + presentation
 
 
 
